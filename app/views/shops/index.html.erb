@@ -1,0 +1,22 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Shops</h1>
+
+<%= form_tag('/shops', method: 'get') do %>
+<%= label_tag(:name_key, 'Search name:') %>
+<%= text_field_tag(:name_key) %>
+<%= submit_tag('Search') %> <%= link_to 'Clear', shops_path %>
+<% end %>
+
+<br>
+
+<div id="shops">
+  <% @shops.each do |shop| %>
+    <%= render shop %>
+    <p>
+      <%= link_to "Show this shop", shop %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to 'New Shop', new_shop_path %> <%= link_to 'Show Categories', categories_path %>
