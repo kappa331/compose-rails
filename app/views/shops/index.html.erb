@@ -5,7 +5,7 @@
 <%= form_tag('/shops', method: 'get') do %>
 <%= label_tag(:name_key, 'Search name:') %>
 <%= text_field_tag(:name_key) %>
-<%= submit_tag('Search') %> <%= link_to 'Clear', shops_path %>
+<%= submit_tag('Search', class: 'btn btn-primary') %> <%= link_to 'Clear', shops_path, class: 'btn btn-danger'  %>
 <% end %>
 
 <br>
@@ -16,6 +16,7 @@
       <th>Category</th>
       <th>Name</th>
       <th>Address</th>
+    </tr>
   </thead>
   <tbody>
     <% @shops.each do |shop| %>
@@ -30,4 +31,4 @@
 
 <br>
 
-<%= link_to 'New Shop', new_shop_path, class: 'btn btn-primary' %> | <%= link_to 'Show category list', categories_path %>
+<%= link_to 'New Shop', new_shop_path, class: 'btn btn-primary' %> <%= link_to 'Show category list', categories_path, class: 'btn btn-info' %>
