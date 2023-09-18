@@ -3,7 +3,7 @@
 <%= render @category %>
 
 <div>
-  <%= link_to 'Delete', @category, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+  <%= link_to 'Delete', @category, data: { turbo_confirm: 'Are you sure?', turbo_method: :delete }, class: 'btn btn-danger' %>
   <%= link_to 'Edit', edit_category_path(@category), class: 'btn btn-primary' %>
   <%= link_to 'Back', categories_path, class: 'btn btn-default' %>
 </div>
