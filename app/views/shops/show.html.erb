@@ -2,6 +2,8 @@
 
 <%= render @shop %>
 
+<%# <%= content_tag(:iframe, 'map', src:'https://www.google.com/maps/embed/v1/place?key='+ ENV['GOOGLE_MAP_API_KEY']  + '&q=' + @shop.address, width: 800, height: 400, frameborder: 0) %> %>
+
 <div>
   <%= link_to "Edit this shop", edit_shop_path(@shop) %> |
   <%= link_to "Back to shops", shops_path %>
